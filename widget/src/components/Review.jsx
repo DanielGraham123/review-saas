@@ -18,6 +18,19 @@ const Review = () => {
     setRating(index + 1);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+      rating,
+    };
+
+    console.log(data);
+  };
+
   return (
     <div className="fixed bottom-4 right-4 z-50 ">
       <Popover>
@@ -35,7 +48,7 @@ const Review = () => {
               Tell us about your experience.
             </h1>
 
-            <form className="space-y-2 py-3">
+            <form className="space-y-2 py-3" onSubmit={handleSubmit}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col items-start space-y-2">
                   <Label htmlFor="name">Name</Label>
