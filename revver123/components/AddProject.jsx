@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React from "react";
 import { Button } from "./ui/button";
 import { Plus } from "lucide-react";
@@ -15,6 +15,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { createProject } from "@/actions/createProject";
+import SubmitButton from "./SubmitButton";
 
 const AddProject = () => {
   return (
@@ -59,7 +60,7 @@ const AddProject = () => {
           </div>
 
           <DialogFooter>
-            <Button type="submit">Create Project</Button>
+            <SubmitButton text="Creating..." btnText={"Create Project"} />
           </DialogFooter>
         </form>
       </DialogContent>
