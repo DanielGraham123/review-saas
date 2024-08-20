@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Button } from "./ui/button";
 import { Plus } from "lucide-react";
@@ -13,6 +14,7 @@ import {
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import { createProject } from "@/actions/createProject";
 
 const AddProject = () => {
   return (
@@ -30,7 +32,7 @@ const AddProject = () => {
             Create a new project to get reviews from users.
           </DialogDescription>
         </DialogHeader>
-        <form className="flex flex-col gap-4">
+        <form className="flex flex-col gap-4" action={createProject}>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-2 items-start">
               <Label htmlFor="title" className="text-right">
