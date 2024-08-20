@@ -1,7 +1,11 @@
-"use client";
+import { allProjects } from "@/actions/allProjects";
 import AddProject from "@/components/AddProject";
 
-export default function Page() {
+export default async function Page() {
+    const projects = await allProjects();
+
+    console.log("projects: ", projects);
+
     return (
         <div className="flex flex-col items-center justify-center h-screen">
             <h1 className="text-4xl font-bold">

@@ -55,10 +55,11 @@ const AddProject = () => {
               name="description"
             />
           </div>
+
+          <DialogFooter>
+            <Button type="submit">Create Project</Button>
+          </DialogFooter>
         </form>
-        <DialogFooter>
-          <Button type="submit">Create Project</Button>
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
