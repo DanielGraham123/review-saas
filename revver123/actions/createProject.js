@@ -3,6 +3,7 @@ import { db } from "@/db";
 import { projects } from "@/db/schema";
 import { generateRandomString, slugify } from "@/lib/utils";
 import { auth } from "@clerk/nextjs/server"
+import { redirect } from "next/navigation";
 
 export const createProject = async (formData) => {
     const { userId } = auth();
@@ -19,6 +20,6 @@ export const createProject = async (formData) => {
 
     const [newProject] = await db.insert(projects).values(project).returning();
 
-    console.log("project created: ", newProject);
-    return newProject;
+    console.log("project created: ", newProject.slug);
+    redirect(`/projects/${newProject.slug}/instructions`);
 }
