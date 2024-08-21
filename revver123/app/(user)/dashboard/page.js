@@ -1,21 +1,18 @@
 import { allProjects } from "@/actions/allProjects";
 import AddProject from "@/components/AddProject";
+import ProjectList from "./project-list";
 
 export default async function Page() {
     const projects = await allProjects();
 
-    console.log("projects: ", projects);
-
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-4xl font-bold">
-                Welcome to your dashboard!
-            </h1>
-            <p className="my-4 text-lg">
-                You are now logged in.
-            </p>
+        <div className="py-5">
+            <div className="flex justify-between align-middle">
+                <h1 className="text-3xl font-bold">Your Projects</h1>
+                <AddProject />
+            </div>
 
-            <AddProject />
+            <ProjectList projects={projects} />
         </div>
     );
 }

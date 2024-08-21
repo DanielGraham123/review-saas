@@ -23,7 +23,7 @@ const AddProject = () => {
       <DialogTrigger asChild>
         <Button>
           <Plus className="h-4 w-4 mr-1" />
-          Create Project
+          Add Project
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] rounded-md">
