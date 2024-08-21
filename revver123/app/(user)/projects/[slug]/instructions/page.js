@@ -1,3 +1,4 @@
+import CopyBtn from "@/components/CopyBtn";
 
 export default async function Page({ params }) {
 
@@ -26,7 +27,7 @@ export default async function Page({ params }) {
                     <br />
                     {`<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}
                 </code>
-                {/* <CopyBtn text={`<my-widget project="${params.slug}"></my-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`} /> */}
+                <CopyBtn text={`<my-widget project="${params.slug}"></my-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`} />
             </div>
         </div>
     )
