@@ -1,8 +1,9 @@
 "use client";
-import Table from "@/components/Table";
 import Link from "next/link";
 import React from "react";
 import { Globe, ChevronLeft, Code } from "lucide-react";
+import { columns } from "./columns";
+import DataTable from "./data-table";
 
 const ProjectDetail = ({ project }) => {
   return (
@@ -43,7 +44,8 @@ const ProjectDetail = ({ project }) => {
         </div>
       </div>
       <div>
-        <Table data={project.feedbacks} />
+        {/* <Table data={project.feedbacks} /> */}
+        <DataTable columns={columns} data={project.feedbacks} />
       </div>
     </div>
   );
